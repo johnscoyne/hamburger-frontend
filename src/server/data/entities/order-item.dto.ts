@@ -15,7 +15,7 @@ export default class OrderItemDto implements OrderItem {
   @ManyToOne(() => OrderDto, orderDto => orderDto.orderItems)
   order: OrderDto;
 
-  @OneToOne(() => MenuItemDto, { eager: true })
+  @ManyToOne(() => MenuItemDto, { eager: true })
   @JoinColumn()
   menuItem: MenuItemDto;
 } 

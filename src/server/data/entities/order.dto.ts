@@ -12,7 +12,7 @@ export default class OrderDto implements Order {
   @OneToMany(() => OrderItemDto, orderItemDto => orderItemDto.order, { cascade: ["insert", "update"] })
   orderItems: OrderItemDto[];
 
-  @OneToOne(() => LocationDto, { eager: true })
+  @ManyToOne(() => LocationDto, { eager: true })
   @JoinColumn()
   location: LocationDto;
 }
